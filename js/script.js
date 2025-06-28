@@ -252,68 +252,132 @@
 
 // Funciones //
 
+//Funcion saludar
+
+function saludar(){
+    alert("Welcome to Radiocat Store!")
+}
+
 //Funcion buscar fanzine de la tienda, muestra el nombre del fanzine y su año de publicación//
 
 
-    function buscarFanzine (name, year) {
+    function searchTitle (name, year) {
     console.log(`Searching item: ${name}...`);
     console.log(`Fanzine found: *${name}* (${year})`)
 
 }
 
-buscarFanzine("Moonchild", "2022");
+searchTitle("Moonchild", "2022");
 
 //Funcion buscar producto de la tienda, muestra el nombre del item y su precio//
 
 
-    function buscarItem (name, price) {
-        let textoBuscar = parseInt(prompt("What are you looking for?"))
-        let storeFull = [fanzines, apparel, misc,prints]
-        let itemFound = false;
-
+    function searchItem (name, price) {
         console.log(`Searching item: ${name}...`);
+        console.log(`Item found: ${name} Price: €${price}`)
+        }
 
-        //storeFull.find{name};
-
-        //if (itemFound) = true {
-            console.log(`Item found: ${name} Price: €${price}`)
-        //}
-        
-
-}
-
-buscarItem("*Love & Shadow* Poster", "20");
+searchItem("*Love & Shadow* Poster", "20");
 
 
-function buscarEnStoreFull(storeFull, name) {
-    const itemFound = [];
+//Funcion de busqueda para menu
 
-    for (let i = 0; i < storeFull.length; i++) {
-        const subarray = storeFull [i]
+function searchNameInItem(sectionOfItems, nameSearch){
+    const nameSearchLowerCase = nameSearch.toLowerCase();
+
+    for (let i = 0; i < sectionOfItems.length; i++ ) {
+        const item = sectionOfItems[i];
+        for(let j = 0; j < item.length; j++){
+            const itemFound = item.length [j].toLowerCase();
+            if (itemFound === nameSearchLowerCase) {
+                return true;
+            }
+        }
     }
-        if (Array.isArray (subarray))
-
-    storeFull.find(subarray => subarray.includes(name));
-    if (itemFound) {
-        return `We found "${name}" in ${itemFound}`;
-    } else {
-        return `"${name}" not found`;
-    };
-
-    
-
+    return false;
 }
 
 
+//Menu de busqueda
 
-//
+let menu = parseInt(prompt("What are you looking for? \n 1-fanzines \n 2-apparel \n 3-prints \n 4-misc \n 5-close"))
+while(menu !== 5) {
+    switch(menu){
+        case 1:
+            const fanzineSearch = prompt("What fanzine are you looking for?");
+            if (fanzineSearch) {
+                const itemFound = searchNameInItem(fanzines, fanzineSearch);
+                if(itemFound) {
+                    console.log("Item found:", itemFound)
+                }
+                else {
+                    console.log ("Not in stock :(");
+                }
+            }
+            else {
+            console.log("You forgot to add your search");
+            }
+            break
+        case 2:
+            const apparelSearch = prompt("What clothes are you looking for?");
+            if (apparelSearch) {
+                const itemFound = searchNameInItem(apparel, apparelSearch);
+                if(itemFound) {
+                    console.log("Item found:", itemFound)
+                }
+                else {
+                    console.log ("Not in stock :(");
+                }
+            }
+            else {
+            console.log("You forgot to add your search");
+            }
+            break
+        case 3:
+            const printSearch = prompt("What kind of prints are you looking for? \n Fine Art? Holographic? or Screen Printed?");
+            if (printSearch) {
+                const itemFound = searchNameInItem(prints, printSearch);
+                if(itemFound) {
+                    console.log("Item found:", itemFound)
+                }
+                else {
+                    console.log ("Not in stock :(");
+                }
+            }
+            else {
+            console.log("You forgot to add your search");
+            }
+            break
+        case 4:
+            const miscSearch = prompt("What are you looking for? \n Stickers? Totebags? Mugs? or Notebooks?");
+            if (miscSearch) {
+                const itemFound = searchNameInItem(apparel, miscSearch);
+                if(itemFound) {
+                    console.log("Item found:", itemFound)
+                }
+                else {
+                    console.log ("Not in stock :(");
+                }
+            }
+            else {
+            console.log("You forgot to add your search");
+            }
+            break
+        default:
+            alert("Wrong option")
+    }
+    menu = parseInt(prompt("What are you looking for? \n 1-fanzines \n 2-apparel \n 3-prints \n 4-misc \n 5-close"))
+    
+}
+
+
 
 //Funcion aplicar descuento 50% en prints//
 
     function descuentoPrints(name, price) {
         let numberOfItems = parseInt(prompt(`*${name}* Price: €${price} 
             We have a 20% discount if you purchase more than one print! :)
-            Add to cart: `))
+            Add n° items to cart: `))
         const descuento = ((price * numberOfItems) * 0.8)
         if (numberOfItems > 1) {
             alert("Now you have a 20% discount on your purchase :)");
@@ -329,9 +393,6 @@ function buscarEnStoreFull(storeFull, name) {
     descuentoPrints ("*Demon lover* Print", 15)
 
 
-    //Funcion agregar producto a lista de carrito de compras
-
-
     //Funcion mostrar y sumar carrito de compras
 
     const cart = [fanzine3,screenPrint1,apparel4,misc3];
@@ -344,15 +405,60 @@ function buscarEnStoreFull(storeFull, name) {
         return total;
     }
 
-    console.log("Your Purchase:")
-
-    cart.forEach(function(item){
+    function itemCart(item){
         console.log(`${item.name} Price: €${item.price}`);
-    })
-    const finalPrice = totalCart(cart);
-    console.log(`Final price: €${finalPrice}`)
-        
+    }
+
+    console.log("Shopping Cart \n Your Purchase:")
+
+    itemCart(fanzine3);
+    itemCart(screenPrint1);
+    itemCart(apparel4)
+    itemCart(misc3)
     
+    const finalPrice = totalCart(cart);
+    alert(`Final price: €${finalPrice}
+        Checkout`)
+
+    let Checkout = parseInt(prompt("Choose a paying method \n 1-Debit / Credit Card \n 2-Apple Pay \n 3-PayPal \n 4-Return"))
+while(menu !== 4) {
+    switch(menu){
+        case 1:
+            //Nro. de Tarjeta: 123456
+            let debitCreditCard = prompt("Add your Card Number");
+            if (debitCreditCard === "123456") {
+                alert("Card number accepted!");
+            } 
+            else {
+                alert("Not a valid number")
+            }
+            // 123
+            let securityCode = prompt("Add Security Code"); 
+            if (securityCode === "123") {
+                alert("Payment approved! \n Your purchase will arrive in 3 days!");
+            } 
+            else {
+                alert("Payment failed :(")
+            }
+            break
+
+        case 2:
+            alert("Processing payment with Apple Pay ...");
+            alert("Payment approved! \n Your purchase will arrive in 3 days!")
+            
+            break
+        case 3:
+            alert("Processing payment with PayPal ...");
+            alert("Payment approved! \n Your purchase will arrive in 3 days!")
+            
+            break
+            
+        default:
+            alert("Wrong option")
+    }
+    menu = parseInt(prompt("Choose a paying method \n 1-Debit / Credit Card \n 2-Apple Pay \n 3-PayPal \n 4-Return"))
+    
+}
 
 
 
@@ -360,28 +466,3 @@ function buscarEnStoreFull(storeFull, name) {
 
 
 
-
-    //function buscar() {
-    // let textoBuscar = prompt("What are you looking for?");
-    //let items = ["fanzine", "apparel", "print", "mug", "totebag", "sticker", "notebook"];
-    //let encontrado = false;
-
-    //for (let i = 0; i < items.length; i++) {
-        //if (items[i].toLowerCase() === textoBuscar.toLowerCase()) {
-        //encontrado = true;
-        //break;
-        //}
-    //}
-
-    //if (encontrado) {
-        //alert("Item found :)");
-        //console.log("Item found: " + textoBuscar);
-    //}
-    //else {
-    //alert("Out of Stock :(");
-    //console.log("Item not found: " + textoBuscar);
-    //}
-
-    //}
-
-    //buscar();
