@@ -459,10 +459,3 @@ while(menu !== 4) {
     menu = parseInt(prompt("Choose a paying method \n 1-Debit / Credit Card \n 2-Apple Pay \n 3-PayPal \n 4-Return"))
     
 }
-
-
-
-
-
-
-
