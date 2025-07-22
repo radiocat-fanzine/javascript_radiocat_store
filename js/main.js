@@ -4,8 +4,7 @@ const products = [
     //Fanzines//
     {
     id: "f01",
-    name: "El Baile de la Venganza",
-    year: "2023",
+    name: "El Baile de la Venganza (2023)",
     price: 8,
     size: "14 x 10 cm / 20 pp",
     printing: "Digital printing",
@@ -15,8 +14,7 @@ const products = [
     },
     {
     id: "f02",
-    name: "Moonchild",
-    year: "2022",
+    name: "Moonchild (2022)",
     price: 15,
     size: "14.5 x 20 cm / 44 pp",
     printing: "Digital printing",
@@ -26,8 +24,7 @@ const products = [
     },
     {
     id: "f03",
-    name: "Genesis",
-    year: "2021",
+    name: "Genesis (2021)",
     price: 10,
     size: "14 x 10 cm / 28 pp",
     printing: "Cover: Screen printing / Interior: Digital printing",
@@ -37,8 +34,7 @@ const products = [
     },
     {
     id: "f04",
-    name: "En la Noche",
-    year: "2021",
+    name: "En la Noche (2021)",
     price: 10,
     size: "14 x 10 cm / 16 pp",
     printing: "Cover: Screen printing / Interior: Digital printing",
@@ -220,152 +216,43 @@ shopProducts = JSON.parse(localStorage.getItem("storeProducts"));
 
 const shopContent = document.getElementById("shopContent");
 const searchInput = document.getElementById("searchInput");
+const noResults = document.getElementById("noResults")
 
 
-const displayProducts = () => {
-    products.forEach((product) => {
-        const content = document.createElement("div");
-        content.className = "cardProduct";
-        content.innerHTML = `
-        <img src="${product.img}">
-        <h3>${product.name}</h3>
-        <p class="size">${product.size}</p>
-        <h3 class="price">€${product.price}</h3>
-        <button>Add to Cart</button>
-        `;
+const displayProducts = (productList) => {
+    shopContent.innerHTML = "";
+
+    if (productList.length === 0) {
+        noResults.style.display = "block";
+    } else {
+        productList.forEach((product) => {
+            const content = document.createElement("div");
+            content.className = "cardProduct";
+            content.innerHTML = `
+                <img src="${product.img}">
+                <h3>${product.name}</h3>
+                <p class="size">${product.size}</p>
+                <h3 class="price">€${product.price}</h3>
+                <button>Add to Cart</button>
+                `;
         shopContent.append(content);
-    });
+        });
+        noResults.style.display = "none";
+    }
+    
 };
 
-//const searchProduct = () => {
-    //const searchTerm = searchInput.value.toLowerCase()
-    //const filterProduct = products.filter((product) => product.name.toLowerCase())
-//};
+const searchProduct = () => {
+    const searchTerm = searchInput.value.toLowerCase()
+    const filterProducts = products.filter((product) => product.name.toLowerCase().startsWith(searchTerm));
 
-displayProducts();
+    displayProducts(filterProducts)
+};
 
+displayProducts(products);
 
-// Funciones //
+searchInput.addEventListener("input", searchProduct)
 
-//Funcion saludar
-
-function saludar(){
-    alert("Welcome to Radiocat Store!")
-}
-
-//Funcion buscar fanzine de la tienda, muestra el nombre del fanzine y su año de publicación//
-
-
-    function searchTitle (name, year) {
-        console.log(`Searching item: ${name}...`);
-        console.log(`Fanzine found: *${name}* (${year})`)
-
-}
-
-searchTitle();
-
-//Funcion buscar producto de la tienda, muestra el nombre del item y su precio//
-
-
-    function searchItem (name, price) {
-        console.log(`Searching item: ${name}...`);
-        console.log(`Item found: ${name} Price: €${price}`)
-        }
-
-searchItem();
-
-
-//Funcion de busqueda para menu
-
-function searchNameInItem(sectionOfItems, nameSearch){
-    const nameSearchLowerCase = nameSearch.toLowerCase();
-
-    for (let i = 0; i < sectionOfItems.length; i++ ) {
-        const item = sectionOfItems[i];
-        for(let j = 0; j < item.length; j++){
-            const itemFound = item.length [j].toLowerCase();
-            if (itemFound === nameSearchLowerCase) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-
-//Menu de busqueda
-
-// function fanzineSearch ()
-
-// let menu = parseInt(prompt("What are you looking for? \n 1-fanzines \n 2-apparel \n 3-prints \n 4-misc \n 5-close"))
-// while(menu !== 5) {
-//     switch(menu){
-//         case 1:
-//             const fanzineSearch = prompt("What fanzine are you looking for?");
-//             if (fanzineSearch) {
-//                 const itemFound = searchNameInItem(fanzines, fanzineSearch);
-//                 if(itemFound) {
-//                     console.log("Item found:", itemFound)
-//                 }
-//                 else {
-//                     console.log ("Not in stock :(");
-//                 }
-//             }
-//             else {
-//             console.log("You forgot to add your search");
-//             }
-//             break
-//         case 2:
-//             const apparelSearch = prompt("What clothes are you looking for?");
-//             if (apparelSearch) {
-//                 const itemFound = searchNameInItem(apparel, apparelSearch);
-//                 if(itemFound) {
-//                     console.log("Item found:", itemFound)
-//                 }
-//                 else {
-//                     console.log ("Not in stock :(");
-//                 }
-//             }
-//             else {
-//             console.log("You forgot to add your search");
-//             }
-//             break
-//         case 3:
-//             const printSearch = prompt("What kind of prints are you looking for? \n Fine Art? Holographic? or Screen Printed?");
-//             if (printSearch) {
-//                 const itemFound = searchNameInItem(prints, printSearch);
-//                 if(itemFound) {
-//                     console.log("Item found:", itemFound)
-//                 }
-//                 else {
-//                     console.log ("Not in stock :(");
-//                 }
-//             }
-//             else {
-//             console.log("You forgot to add your search");
-//             }
-//             break
-//         case 4:
-//             const miscSearch = prompt("What are you looking for? \n Stickers? Totebags? Mugs? or Notebooks?");
-//             if (miscSearch) {
-//                 const itemFound = searchNameInItem(apparel, miscSearch);
-//                 if(itemFound) {
-//                     console.log("Item found:", itemFound)
-//                 }
-//                 else {
-//                     console.log ("Not in stock :(");
-//                 }
-//             }
-//             else {
-//             console.log("You forgot to add your search");
-//             }
-//             break
-//         default:
-//             alert("Wrong option")
-//     }
-//     menu = parseInt(prompt("What are you looking for? \n 1-fanzines \n 2-apparel \n 3-prints \n 4-misc \n 5-close"))
-    
-// }
 
 
 
