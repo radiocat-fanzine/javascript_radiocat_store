@@ -218,6 +218,7 @@ const shopContent = document.getElementById("shopContent");
 const searchInput = document.getElementById("searchInput");
 const noResults = document.getElementById("noResults")
 
+//Funcion para mostrar productos de la tienda
 
 const displayProducts = (productList) => {
     shopContent.innerHTML = "";
@@ -241,6 +242,8 @@ const displayProducts = (productList) => {
     }
     
 };
+
+// Funcion de buscador de productos filtrando por nombre + evento
 
 const searchProduct = () => {
     const searchTerm = searchInput.value.toLowerCase()
