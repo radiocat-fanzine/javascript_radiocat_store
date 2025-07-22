@@ -1,8 +1,7 @@
 //Lista de productos//
 
-//Fanzines//
-
 const products = [
+    //Fanzines//
     {
     id: "f01",
     name: "El Baile de la Venganza",
@@ -57,7 +56,7 @@ const products = [
     description: "A satirical fanzine about the artist's struggles with sleep, driven by an imagination that borders on delirium and an uncontrollable curiosity sparked by the slightest mental stimulus. It also delves into her unique way of coping with it all. The illustrations were created using ink and watercolors.",
     img: "assets/img_shop/f_insomnio_01.jpg",
     },
-//Apparel//
+    //Apparel//
     {
     id: "ap01",
     name: "New Moon TShirt",
@@ -98,7 +97,7 @@ const products = [
     description: "Long-sleeve sweatshirt made from heather gray French terry, a lightweight and comfortable fabric, perfect for the early days of cold weather. The front features a black ink print of a witch with the new moon in the background, evoking a mystical and enigmatic aura.",
     img: "assets/img_shop/polera_lunanueva_01.jpg",
     },
-//Misc Items//
+    //Misc Items//
     {
     id: "ms01",
     name: "Witchy Sticker Pack",
@@ -149,7 +148,7 @@ const products = [
     description: "Ceramic mug featuring a design of a mermaid resting on a rock as she gazes at the sunset. The original illustration, created with ink and watercolors, captures a contemplative moment by the sea.",
     img: "assets/img_shop/taza_sirena_01.jpg",
     },
-//Prints//
+    //Prints//
     //Fine Art Prints//
     {
     id: "fp01",
@@ -202,7 +201,7 @@ const products = [
     description: "The original illustration was made with ink and was digitally colored.",
     img: "assets/img_shop/pearlgoddess_01.jpg",
     },
-        //Screen Printed//
+    //Screen Printed//
     {
     id: "sp01",
     name: "*Love & Shadow* Poster",
@@ -213,38 +212,18 @@ const products = [
     description: "The original illustration was made with black ink. The scene belongs to the 4th chapter of the comic *Moonchild*",
     img: "assets/img_shop/poster_loveshadow_01.jpg",
     },
-    ];
+];
 
 
-localStorage.setItem("storeFanzines",JSON.stringify(fanzines));
-localStorage.setItem("storeApparel",JSON.stringify(apparel));
-localStorage.setItem("storeMisc",JSON.stringify(misc));
-localStorage.setItem("storePrints",JSON.stringify(prints));
-fanzinesProducts = JSON.parse(localStorage.getItem("storeFanzines"));
-apparelProducts = JSON.parse(localStorage.getItem("storeApparel"));
-miscProducts = JSON.parse(localStorage.getItem("storeMisc"));
-printsProducts = JSON.parse(localStorage.getItem("storePrints"));
+localStorage.setItem("storeProducts",JSON.stringify(products));
+shopProducts = JSON.parse(localStorage.getItem("storeProducts"));
 
 const shopContent = document.getElementById("shopContent");
 const searchInput = document.getElementById("searchInput");
 
-const displayFanzines = () => {
-    fanzines.forEach((product) => {
-        const content = document.createElement("div");
-        content.className = "cardProduct";
-        content.innerHTML = `
-        <img src="${product.img}">
-        <h3>${product.name} (${product.year})</h3>
-        <p class="format">${product.format}</p>
-        <h3 class="price">€${product.price}</h3>
-        <button>Add to Cart</button>
-        `;
-        shopContent.append(content);
-    });
-};
 
-const displayApparel = () => {
-    apparel.forEach((product) => {
+const displayProducts = () => {
+    products.forEach((product) => {
         const content = document.createElement("div");
         content.className = "cardProduct";
         content.innerHTML = `
@@ -258,45 +237,12 @@ const displayApparel = () => {
     });
 };
 
-const displayMisc = () => {
-    misc.forEach((product) => {
-        const content = document.createElement("div");
-        content.className = "cardProduct";
-        content.innerHTML = `
-        <img src="${product.img}">
-        <h3>${product.name}</h3>
-        <p class="size">${product.size}</p>
-        <h3 class="price">€${product.price}</h3>
-        <button>Add to Cart</button>
-        `;
-        shopContent.append(content);
-    });
-};
+//const searchProduct = () => {
+    //const searchTerm = searchInput.value.toLowerCase()
+    //const filterProduct = products.filter((product) => product.name.toLowerCase())
+//};
 
-const displayPrints = () => {
-    prints.forEach((product) => {
-        const content = document.createElement("div");
-        content.className = "cardProduct";
-        content.innerHTML = `
-        <img src="${product.img}">
-        <h3>${product.name}</h3>
-        <p class="size">${product.size}</p>
-        <h3 class="price">€${product.price}</h3>
-        <button>Add to Cart</button>
-        `;
-        shopContent.append(content);
-    });
-};
-
-const searchProduct = () => {
-    const searchTerm = searchInput.value.toLowerCase()
-    const filterProduct = products. filter((product) => product.name.toLowerCase())
-};
-
-displayFanzines();
-displayApparel();
-displayMisc();
-displayPrints();
+displayProducts();
 
 
 // Funciones //
