@@ -398,7 +398,7 @@ function searchNameInItem(sectionOfItems, nameSearch){
 
     itemCart(f03);
     itemCart(sp01);
-    itemCart(ap04)
+    itemCart(ap04);
     itemCart(ms03)
     
     const finalPrice = totalCart(cart);
