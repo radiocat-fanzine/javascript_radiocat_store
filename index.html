@@ -3,11 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    
     <!-- JS -->
     <script defer src="./js/main.js"></script>
     <title>Home</title>
 </head>
 <body>
 <h1>Radiocat Store</h1>
+<!-- Search Bar -->
+<section id="containerMain">
+    <div class="searchContainer">
+        <input type="text" name="searchBar" placeholder="Search products...">
+        <ul id="sectionOfItemsList">
+            <li class="sectionOfItems">All</li>
+            <li class="sectionOfItems">Fanzines</li>
+            <li class="sectionOfItems">Apparel</li>
+            <li class="sectionOfItems">Misc</li>
+            <li class="sectionOfItems">Prints</li>
+        </ul>
+    </div>
+    <p id="noResults" class="no-results">Product not found.</p>
+
+<!-- Shop items -->
+    <div class="cardItemsContainer">
+        <div id="shopContent"></div>
+    </div>
+</section>
 </body>
 </html>

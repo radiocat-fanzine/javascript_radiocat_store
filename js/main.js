@@ -232,6 +232,38 @@ apparelProducts = JSON.parse(localStorage.getItem("storeApparel"));
 miscProducts = JSON.parse(localStorage.getItem("storeMisc"));
 printsProducts = JSON.parse(localStorage.getItem("storePrints"));
 
+const shopContent = document.getElementById("shopContent")
+
+const displayFanzines = () => {
+    fanzines.forEach((product)=> {
+        const content = document.createElement("div")
+        content.className = "cardProduct";
+        content.innerHTML = `
+        <h3>${product.name} (${product.year})</h3>
+        <p class="size">€${product.size}</p>
+        <p class="price">€${product.price}</p>
+        <button>Add to Cart</button>
+        `;
+        shopContent.append();
+    });
+};
+
+displayFanzines();
+
+const displayApparel = () => {
+    apparel.forEach((product)=> {
+        const content = document.createElement("div")
+        content.className = "cardProduct";
+        content.innerHTML = `
+        <h3>${product.name}</h3>
+        <p class="price">€${product.price}</p>
+        <button>Add to Cart</button>
+        `;
+        shopContent.append();
+    });
+};
+
+displayApparel();
 
 // Funciones //
 
@@ -380,7 +412,7 @@ function searchNameInItem(sectionOfItems, nameSearch){
 
     //Funcion mostrar y sumar carrito de compras
 
-    const cart = [f03,sp01,ap04,ms03];
+    const cart = [];
 
     function totalCart(cart){
         let total = 0;
