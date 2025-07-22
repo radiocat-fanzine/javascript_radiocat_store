@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    src: url(https://example.com/material-symbols.woff) format('woff');
+  }
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none
+}
+
+body{
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+h1{
+    color: #403177;
+    font-size: 1.75rem;
+    font-family: "Raleway", serif;
+    font-style: normal;
+    font-weight: 450;
+    padding-left: 3.125rem;
+    padding-right: 3.125rem;
+}
+
+h2{
+    color:#403177;
+    font-size: 1.5rem;
+    font-family: "Raleway", serif;
+    font-style: normal;
+    font-weight: 450;
+    padding-left: 3.125rem;
+    padding-right: 3.125rem;
+}
+h3{
+    color: #403177;
+    font-size: 1.25rem;
+    font-family: "Raleway", serif;
+    font-style: normal;
+    font-weight: 600;
+    padding-left: 3.125rem;
+    padding-right: 3.125rem;
+}
+p{
+    color: #403177;
+    font-size: 1.25rem;
+    font-family: "Raleway", serif;
+    font-style: normal;
+    font-weight: 400;
+    padding-left: 3.125rem;
+    padding-right: 3.125rem;
+}
