@@ -1,8 +1,10 @@
 //Lista de productos//
 
 //Fanzines//
-    
-    const fanzine1 = {
+
+const fanzines = [
+    {
+    id: "f01",
     name: "El Baile de la Venganza",
     year: "2023",
     price: 8,
@@ -11,9 +13,9 @@
     language: "Spanish",
     description: "A fanzine with poems and drawings by Radiocat and Feminist Poet from Trujillo, Peru, Diana Terrones. The poems deal with feelings between visceral and melancholic that meet the reader's own wounds. All illustrations were worked with ink.",
     
-    }
-
-    const fanzine2 = {
+    },
+    {
+    id: "f02",
     name: "Moonchild",
     year: "2022",
     price: 15,
@@ -21,10 +23,9 @@
     printing: "Digital printing",
     language: "Spanish / English",
     description: "A comic featuring four short stories, each unfolding like pieces of a puzzle that interweave past and future—what has already happened and what is yet to come. Following the moon's trajectory, the reader is drawn into a distorted landscape where the only undeniable truth is emotion. The original cover illustrations were painted in watercolor, while the interior artwork was created with ink and digitally retouched.",
-    
-    }
-
-    const fanzine3 = {
+    },
+    {
+    id: "f03",
     name: "Genesis",
     year: "2021",
     price: 10,
@@ -32,10 +33,9 @@
     printing: "Cover: Screen printing / Interior: Digital printing",
     language: "Spanish / English",
     description: "From the encounter between a star and a young girl, she embarks on a journey into an astral dimension shaped by her own solitude. As she navigates this new world, she contemplates the true meaning of forging bonds with other sentient beings. Inspired by Grimes' song, she slowly awakens her dormant heart, realizing that each connection has given rise to its own universe. The original illustrations were made with ink and acrylics.",
-    
-    }
-
-    const fanzine4 = {
+    },
+    {
+    id: "f04",
     name: "En la Noche",
     year: "2021",
     price: 10,
@@ -43,10 +43,9 @@
     printing: "Cover: Screen printing / Interior: Digital printing",
     language: "Spanish / English",
     description: "A fanzine created as an outlet to release the tension and uncertainty about the future, brought on by the sociopolitical context—not only in Peru but worldwide. Drawing from elements of tarot, palmistry, and astrology, it explores emotions ranging from anguish, apathy, and a sense of defeat to the transformation of that chaotic energy into a driving force that keeps us moving forward. The sketches were hand-drawn and later digitally colored.",
-    
-    }
-
-    const fanzine5 = {
+    },
+    {
+    id: "f05",
     name: "Insomnio",
     year: "2021",
     price: 8,
@@ -54,15 +53,14 @@
     printing: "Digital printing",
     language: "Spanish / English",
     description: "A satirical fanzine about the artist's struggles with sleep, driven by an imagination that borders on delirium and an uncontrollable curiosity sparked by the slightest mental stimulus. It also delves into her unique way of coping with it all. The illustrations were created using ink and watercolors.",
-    
     }
-
-    const fanzines = [fanzine1, fanzine2, fanzine3, fanzine4,fanzine5]
-    console.log(fanzines)
+]
 
 //Apparel//
 
-    const apparel1 = {
+const apparel = [
+    {
+    id: "ap01",
     name: "New Moon TShirt",
     price: 20,
     size: "S / M / L / XL",
@@ -70,10 +68,9 @@
     printing: "Hand Screen Printed",
     colors: "Tie dye pink Jersey / Black ink",
     description: "White jersey T-shirt with a soft pastel pink marbled tie-dye effect. It features a front pocket printed with a small flame drawing, while the back shows an illustration of a witch with the new moon in the background, all printed in black ink. The fabric is light and soft to the touch. More than just a garment, it is a talisman—the lunar energy guiding new paths, while the little flame keeps the heart warm and alight.",
-    
-    }
-
-    const apparel2 = {
+    },
+    {
+    id: "ap02",
     name: "Kawaii Kitty TShirt",
     price: 20,
     size: "S / M / L / XL",
@@ -81,10 +78,9 @@
     printing: "Hand Screen Printed",
     colors: "Black Jersey / White or Salmon ink",
     description: "Black jersey T-shirt with a front pocket, made from a light and soft fabric. The print is available in salmon or white. On the pocket, a cute kawaii kitten adds charm, the same one that, in the back design, grants its blessing to a girl as she dissolves into the cosmos. If you gaze directly into the kitten’s third eye, you too may receive its blessing.",
-    
-    }
-
-    const apparel3 = {
+    },
+    {
+    id: "ap03",
     name: "Ritual TShirt",
     price: 20,
     size: "S / M / L",
@@ -92,10 +88,9 @@
     printing: "Hand Screen Printed",
     colors: "Black Jersey / Lilac ink",
     description: "Black jersey T-shirt with a front-printed design, made from a light and soft fabric. The lilac ink print depicts a girl performing an energy cleansing ritual in a bathtub, as water lilies rise to the surface. Around her, the gentle rhythm of waves dissolving into the sand lulls her into a soothing trance.",
-    
-    }
-
-    const apparel4 = {
+    },
+    {
+    id: "ap05",
     name: "New Moon Sweatshirt",
     price: 30,
     size: "L",
@@ -103,152 +98,140 @@
     printing: "Hand Screen Printed",
     colors: "Melange French Terry / Black ink",
     description: "Long-sleeve sweatshirt made from heather gray French terry, a lightweight and comfortable fabric, perfect for the early days of cold weather. The front features a black ink print of a witch with the new moon in the background, evoking a mystical and enigmatic aura.",
-    
     }
-
-    const apparel = [apparel1, apparel2, apparel3, apparel4]
-    console.log(apparel)
+]
 
 //Misc Items//
 
-    const misc1 = {
+const misc = [
+    {
+    id: "ms01",
     name: "Witchy Sticker Pack",
     price: 8,
     size: "4 to 10 cm / 12 stickers",
     printing: "Hand Screen Printed",
     material: "Holographic Vinil & Black ink / Pastel pink, mint and lilac & Gold ink",
     description: "Various designs of kawaii kittens, magical items and flowers.",
-    
-    }
-
-    const misc2 = {
+    },
+    {
+    id: "ms02",
     name: "Witchy Notebook",
     price: 10,
     size: "14.5 x 20 cm / 60 pp",
     printing: "Cover: Screen Printed",
     material: "Interior: 75gr ivory bond paper",
     description: "Staple-bound notebooks with covers made from 220 g fine cotton cardstock in Prussian blue. The design, screen-printed in gold ink, features a pattern inspired by magic, tarot, and rituals. It comes with a vibrant neon fuchsia elastic band to keep it securely closed.",
-    
-    }
-
-    const misc3 = {
+    },
+    {
+    id: "ms03",
     name: "Ritual Totebag",
     price: 15,
     size: "33 x 37 cm",
     printing: "Hand Screen Printed",
     material: "100% Cotton",
     description: "Totebag with a printed design on one side. It features two sturdy fabric handles securely stitched to the body. Made from tocuyo fabric, it showcases a delicate tie-dye effect in soft pastel shades of pink and blue. The printed design depicts an illustration of a girl performing an energy cleansing ritual in a bathtub, as water lilies rise to the surface. Around her, the gentle rhythm of waves dissolving into the sand lulls her into a soothing trance.",
-    
-    }
-
-    const misc4 = {
+    },
+    {
+    id: "ms04",
     name: "Cosmic Kitty Mug",
     price: 15,
     size: "11 oz / 30 ml",
     printing: "Sublimation Printing on Ceramic",
     material: "Ceramic mug",
     description: "Ceramic mug featuring a design of a cosmic kitten peacefully sleeping while drifting among galaxies. The original illustration was created using ink and watercolors, capturing a dreamy atmosphere.",
-    
-    }
-
-    const misc5 = {
+    },
+    {
+    id: "ms05",
     name: "Mermaid Mug",
     price: 15,
     size: "11 oz / 30 ml",
     printing: "Sublimation Printing on Ceramic",
     material: "Ceramic mug",
     description: "Ceramic mug featuring a design of a mermaid resting on a rock as she gazes at the sunset. The original illustration, created with ink and watercolors, captures a contemplative moment by the sea.",
-    
     }
-
-    const misc = [misc1, misc2, misc3, misc4, misc5]
-    console.log(misc)
+]
 
 //Prints//
 
+    const prints = [
     //Fine Art Prints//
-
-    const fineArtPrint1 = {
+    {
+    id: "fp01",
     name: "*Demon Lover* Fine Art Print",
     price: 12,
     size: "A5 format",
     material: "120 gr. Acid-free cotton paper",
     printing: "High Quality Digital Printing",
     description: "The original illustration was made with watercolors."
-    
-    }
-
-    const fineArtPrint2 = {
+    },
+    {
+    id: "fp02",
     name: "*Eros in Pisces* Fine Art Print",
     price: 12,
     size: "A5 format",
     material: "120 gr. Acid-free cotton paper",
     printing: "High Quality Digital Printing",
     description: "The original illustration was made with watercolors."
-    
-    }
-
-    const fineArtPrint3 = {
+    },
+    {
+    id: "fp03",
     name: "*Spring Rain* Fine Art Print",
     price: 12,
     size: "A5 format",
     material: "120 gr. Acid-free cotton paper",
     printing: "High Quality Digital Printing",
     description: "The original illustration was made with watercolors."
-    
-    }
-
-    const fineArtPrint4 = {
+    },
+    {
+    id: "fp04",
     name: "*Munay Lagoon* Fine Art Print",
     price: 12,
     size: "A5 format",
     material: "120 gr. Acid-free cotton paper",
     printing: "High Quality Digital Printing",
     description: "The original illustration was made with watercolors."
-    
-    }
-
+    },
     //Holographic Prints//
-
-    const holoPrint1 = {
+    {
+    id: "hp01",
     name: "*Pearl Goddess* Print",
     price: 15,
     size: "A4 format",
     material: "Holographic Vinil",
     printing: "High Quality Digital Printing",
     description: "The original illustration was made with ink and was digitally colored."
-    
-    }
-
-    //Screen Printed//
-
-    const screenPrint1 = {
+    },
+        //Screen Printed//
+    {
+    id: "sp01",
     name: "*Love & Shadow* Poster",
     price: 15,
     size: "A3 format",
     material: "120 gr. Neon pink paper",
     printing: "Hand Screen Printed in black ink",
     description: "The original illustration was made with black ink. The scene belongs to the 4th chapter of the comic *Moonchild*"
-    
-    }
-
-    const screenPrint2 = {
+    },
+    {
+    id: "sp02",
     name: "*El Baile de la Venganza* Poster",
     price: 15,
     size: "A3 format",
     material: "90 gr. black paper",
     printing: "Hand Screen Printed in lilac ink",
     description: "The original illustration was made with black ink. The illustration belongs to the fanzine *El Baile de la Venganza*"
-    
     }
+    ]
 
-    const fineArtPrints = [fineArtPrint1, fineArtPrint2, fineArtPrint3, fineArtPrint4]
-    const holoPrints = [holoPrint1]
-    const screenPrints = [screenPrint1, screenPrint2]
-    const prints = [fineArtPrints, holoPrints, screenPrints]
-    console.log(prints)
 
-    const storeFull = [fanzines, apparel, misc, prints]
+localStorage.setItem("storeFanzines",JSON.stringify(fanzines));
+localStorage.setItem("storeApparel",JSON.stringify(apparel));
+localStorage.setItem("storeMisc",JSON.stringify(misc));
+localStorage.setItem("storePrints",JSON.stringify(prints));
+fanzinesProducts = JSON.parse(localStorage.getItem("storeFanzines"));
+apparelProducts = JSON.parse(localStorage.getItem("storeApparel"));
+miscProducts = JSON.parse(localStorage.getItem("storeMisc"));
+printsProducts = JSON.parse(localStorage.getItem("storePrints"));
+
 
 // Funciones //
 
@@ -262,12 +245,12 @@ function saludar(){
 
 
     function searchTitle (name, year) {
-    console.log(`Searching item: ${name}...`);
-    console.log(`Fanzine found: *${name}* (${year})`)
+        console.log(`Searching item: ${name}...`);
+        console.log(`Fanzine found: *${name}* (${year})`)
 
 }
 
-searchTitle("Moonchild", "2022");
+searchTitle();
 
 //Funcion buscar producto de la tienda, muestra el nombre del item y su precio//
 
@@ -277,7 +260,7 @@ searchTitle("Moonchild", "2022");
         console.log(`Item found: ${name} Price: €${price}`)
         }
 
-searchItem("*Love & Shadow* Poster", "20");
+searchItem();
 
 
 //Funcion de busqueda para menu
@@ -300,75 +283,77 @@ function searchNameInItem(sectionOfItems, nameSearch){
 
 //Menu de busqueda
 
-let menu = parseInt(prompt("What are you looking for? \n 1-fanzines \n 2-apparel \n 3-prints \n 4-misc \n 5-close"))
-while(menu !== 5) {
-    switch(menu){
-        case 1:
-            const fanzineSearch = prompt("What fanzine are you looking for?");
-            if (fanzineSearch) {
-                const itemFound = searchNameInItem(fanzines, fanzineSearch);
-                if(itemFound) {
-                    console.log("Item found:", itemFound)
-                }
-                else {
-                    console.log ("Not in stock :(");
-                }
-            }
-            else {
-            console.log("You forgot to add your search");
-            }
-            break
-        case 2:
-            const apparelSearch = prompt("What clothes are you looking for?");
-            if (apparelSearch) {
-                const itemFound = searchNameInItem(apparel, apparelSearch);
-                if(itemFound) {
-                    console.log("Item found:", itemFound)
-                }
-                else {
-                    console.log ("Not in stock :(");
-                }
-            }
-            else {
-            console.log("You forgot to add your search");
-            }
-            break
-        case 3:
-            const printSearch = prompt("What kind of prints are you looking for? \n Fine Art? Holographic? or Screen Printed?");
-            if (printSearch) {
-                const itemFound = searchNameInItem(prints, printSearch);
-                if(itemFound) {
-                    console.log("Item found:", itemFound)
-                }
-                else {
-                    console.log ("Not in stock :(");
-                }
-            }
-            else {
-            console.log("You forgot to add your search");
-            }
-            break
-        case 4:
-            const miscSearch = prompt("What are you looking for? \n Stickers? Totebags? Mugs? or Notebooks?");
-            if (miscSearch) {
-                const itemFound = searchNameInItem(apparel, miscSearch);
-                if(itemFound) {
-                    console.log("Item found:", itemFound)
-                }
-                else {
-                    console.log ("Not in stock :(");
-                }
-            }
-            else {
-            console.log("You forgot to add your search");
-            }
-            break
-        default:
-            alert("Wrong option")
-    }
-    menu = parseInt(prompt("What are you looking for? \n 1-fanzines \n 2-apparel \n 3-prints \n 4-misc \n 5-close"))
+// function fanzineSearch ()
+
+// let menu = parseInt(prompt("What are you looking for? \n 1-fanzines \n 2-apparel \n 3-prints \n 4-misc \n 5-close"))
+// while(menu !== 5) {
+//     switch(menu){
+//         case 1:
+//             const fanzineSearch = prompt("What fanzine are you looking for?");
+//             if (fanzineSearch) {
+//                 const itemFound = searchNameInItem(fanzines, fanzineSearch);
+//                 if(itemFound) {
+//                     console.log("Item found:", itemFound)
+//                 }
+//                 else {
+//                     console.log ("Not in stock :(");
+//                 }
+//             }
+//             else {
+//             console.log("You forgot to add your search");
+//             }
+//             break
+//         case 2:
+//             const apparelSearch = prompt("What clothes are you looking for?");
+//             if (apparelSearch) {
+//                 const itemFound = searchNameInItem(apparel, apparelSearch);
+//                 if(itemFound) {
+//                     console.log("Item found:", itemFound)
+//                 }
+//                 else {
+//                     console.log ("Not in stock :(");
+//                 }
+//             }
+//             else {
+//             console.log("You forgot to add your search");
+//             }
+//             break
+//         case 3:
+//             const printSearch = prompt("What kind of prints are you looking for? \n Fine Art? Holographic? or Screen Printed?");
+//             if (printSearch) {
+//                 const itemFound = searchNameInItem(prints, printSearch);
+//                 if(itemFound) {
+//                     console.log("Item found:", itemFound)
+//                 }
+//                 else {
+//                     console.log ("Not in stock :(");
+//                 }
+//             }
+//             else {
+//             console.log("You forgot to add your search");
+//             }
+//             break
+//         case 4:
+//             const miscSearch = prompt("What are you looking for? \n Stickers? Totebags? Mugs? or Notebooks?");
+//             if (miscSearch) {
+//                 const itemFound = searchNameInItem(apparel, miscSearch);
+//                 if(itemFound) {
+//                     console.log("Item found:", itemFound)
+//                 }
+//                 else {
+//                     console.log ("Not in stock :(");
+//                 }
+//             }
+//             else {
+//             console.log("You forgot to add your search");
+//             }
+//             break
+//         default:
+//             alert("Wrong option")
+//     }
+//     menu = parseInt(prompt("What are you looking for? \n 1-fanzines \n 2-apparel \n 3-prints \n 4-misc \n 5-close"))
     
-}
+// }
 
 
 
@@ -395,7 +380,7 @@ while(menu !== 5) {
 
     //Funcion mostrar y sumar carrito de compras
 
-    const cart = [fanzine3,screenPrint1,apparel4,misc3];
+    const cart = [f03,sp01,ap04,ms03];
 
     function totalCart(cart){
         let total = 0;
@@ -411,10 +396,10 @@ while(menu !== 5) {
 
     console.log("Shopping Cart \n Your Purchase:")
 
-    itemCart(fanzine3);
-    itemCart(screenPrint1);
-    itemCart(apparel4)
-    itemCart(misc3)
+    itemCart(f03);
+    itemCart(sp01);
+    itemCart(ap04)
+    itemCart(ms03)
     
     const finalPrice = totalCart(cart);
     alert(`Final price: €${finalPrice}
