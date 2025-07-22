@@ -2,116 +2,112 @@
 
 //Fanzines//
 
-const fanzines = [
+const products = [
     {
     id: "f01",
     name: "El Baile de la Venganza",
     year: "2023",
     price: 8,
-    format: "14 x 10 cm / 20 pp",
+    size: "14 x 10 cm / 20 pp",
     printing: "Digital printing",
-    language: "Spanish",
+    feature: "Spanish",
     description: "A fanzine with poems and drawings by Radiocat and Feminist Poet from Trujillo, Peru, Diana Terrones. The poems deal with feelings between visceral and melancholic that meet the reader's own wounds. All illustrations were worked with ink.",
-    
+    img: "assets/img_shop/f_elbaile_01.jpg",
     },
     {
     id: "f02",
     name: "Moonchild",
     year: "2022",
     price: 15,
-    format: "14.5 x 20 cm / 44 pp",
+    size: "14.5 x 20 cm / 44 pp",
     printing: "Digital printing",
-    language: "Spanish / English",
+    feature: "Spanish / English",
     description: "A comic featuring four short stories, each unfolding like pieces of a puzzle that interweave past and future—what has already happened and what is yet to come. Following the moon's trajectory, the reader is drawn into a distorted landscape where the only undeniable truth is emotion. The original cover illustrations were painted in watercolor, while the interior artwork was created with ink and digitally retouched.",
+    img: "assets/img_shop/f_moonchild.jpg",
     },
     {
     id: "f03",
     name: "Genesis",
     year: "2021",
     price: 10,
-    format: "14 x 10 cm / 28 pp",
+    size: "14 x 10 cm / 28 pp",
     printing: "Cover: Screen printing / Interior: Digital printing",
-    language: "Spanish / English",
+    feature: "Spanish / English",
     description: "From the encounter between a star and a young girl, she embarks on a journey into an astral dimension shaped by her own solitude. As she navigates this new world, she contemplates the true meaning of forging bonds with other sentient beings. Inspired by Grimes' song, she slowly awakens her dormant heart, realizing that each connection has given rise to its own universe. The original illustrations were made with ink and acrylics.",
+    img: "assets/img_shop/f_genesis_01.jpg",
     },
     {
     id: "f04",
     name: "En la Noche",
     year: "2021",
     price: 10,
-    format: "14 x 10 cm / 16 pp",
+    size: "14 x 10 cm / 16 pp",
     printing: "Cover: Screen printing / Interior: Digital printing",
-    language: "Spanish / English",
+    feature: "Spanish / English",
     description: "A fanzine created as an outlet to release the tension and uncertainty about the future, brought on by the sociopolitical context—not only in Peru but worldwide. Drawing from elements of tarot, palmistry, and astrology, it explores emotions ranging from anguish, apathy, and a sense of defeat to the transformation of that chaotic energy into a driving force that keeps us moving forward. The sketches were hand-drawn and later digitally colored.",
+    img: "assets/img_shop/f_enlanoche_01.jpg",
     },
     {
     id: "f05",
-    name: "Insomnio",
-    year: "2021",
+    name: "Insomnio (2021)",
     price: 8,
-    format: "14 x 10 cm / 16 pp",
+    size: "14 x 10 cm / 16 pp",
     printing: "Digital printing",
-    language: "Spanish / English",
+    feature: "Spanish / English",
     description: "A satirical fanzine about the artist's struggles with sleep, driven by an imagination that borders on delirium and an uncontrollable curiosity sparked by the slightest mental stimulus. It also delves into her unique way of coping with it all. The illustrations were created using ink and watercolors.",
-    }
-]
-
+    img: "assets/img_shop/f_insomnio_01.jpg",
+    },
 //Apparel//
-
-const apparel = [
     {
     id: "ap01",
     name: "New Moon TShirt",
     price: 20,
     size: "S / M / L / XL",
-    material: "100% Cotton",
+    feature: "100% Cotton / Tie dye pink Jersey / Black ink",
     printing: "Hand Screen Printed",
-    colors: "Tie dye pink Jersey / Black ink",
     description: "White jersey T-shirt with a soft pastel pink marbled tie-dye effect. It features a front pocket printed with a small flame drawing, while the back shows an illustration of a witch with the new moon in the background, all printed in black ink. The fabric is light and soft to the touch. More than just a garment, it is a talisman—the lunar energy guiding new paths, while the little flame keeps the heart warm and alight.",
+    img: "assets/img_shop/camiseta_lunanueva_01.jpg",
     },
     {
     id: "ap02",
     name: "Kawaii Kitty TShirt",
     price: 20,
     size: "S / M / L / XL",
-    material: "100% Cotton",
+    feature: "100% Cotton / Black Jersey / White or Salmon ink",
     printing: "Hand Screen Printed",
-    colors: "Black Jersey / White or Salmon ink",
     description: "Black jersey T-shirt with a front pocket, made from a light and soft fabric. The print is available in salmon or white. On the pocket, a cute kawaii kitten adds charm, the same one that, in the back design, grants its blessing to a girl as she dissolves into the cosmos. If you gaze directly into the kitten’s third eye, you too may receive its blessing.",
+    img: "assets/img_shop/camiseta_michikawaii_blanco_01.jpg",
     },
     {
     id: "ap03",
     name: "Ritual TShirt",
     price: 20,
     size: "S / M / L",
-    material: "100% Cotton",
+    feature: "100% Cotton / Black Jersey / Lilac ink",
     printing: "Hand Screen Printed",
-    colors: "Black Jersey / Lilac ink",
     description: "Black jersey T-shirt with a front-printed design, made from a light and soft fabric. The lilac ink print depicts a girl performing an energy cleansing ritual in a bathtub, as water lilies rise to the surface. Around her, the gentle rhythm of waves dissolving into the sand lulls her into a soothing trance.",
+    img: "assets/img_shop/camiseta_ritual01.jpg",
     },
     {
     id: "ap05",
     name: "New Moon Sweatshirt",
     price: 30,
     size: "L",
-    material: "100% Cotton",
+    feature: "100% Cotton / Melange French Terry / Black ink",
     printing: "Hand Screen Printed",
-    colors: "Melange French Terry / Black ink",
     description: "Long-sleeve sweatshirt made from heather gray French terry, a lightweight and comfortable fabric, perfect for the early days of cold weather. The front features a black ink print of a witch with the new moon in the background, evoking a mystical and enigmatic aura.",
-    }
-]
-
+    img: "assets/img_shop/polera_lunanueva_01.jpg",
+    },
 //Misc Items//
-
-const misc = [
     {
     id: "ms01",
     name: "Witchy Sticker Pack",
     price: 8,
     size: "4 to 10 cm / 12 stickers",
     printing: "Hand Screen Printed",
-    material: "Holographic Vinil & Black ink / Pastel pink, mint and lilac & Gold ink",
+    feature: "Holographic Vinil & Black ink / Pastel pink, mint and lilac & Gold ink",
     description: "Various designs of kawaii kittens, magical items and flowers.",
+    img: "assets/img_shop/stickers_colores_04.jpg",
     },
     {
     id: "ms02",
@@ -119,8 +115,9 @@ const misc = [
     price: 10,
     size: "14.5 x 20 cm / 60 pp",
     printing: "Cover: Screen Printed",
-    material: "Interior: 75gr ivory bond paper",
+    feature: "Interior: 75gr ivory bond paper",
     description: "Staple-bound notebooks with covers made from 220 g fine cotton cardstock in Prussian blue. The design, screen-printed in gold ink, features a pattern inspired by magic, tarot, and rituals. It comes with a vibrant neon fuchsia elastic band to keep it securely closed.",
+    img: "assets/img_shop/libretas_witch01.jpg",
     },
     {
     id: "ms03",
@@ -128,8 +125,9 @@ const misc = [
     price: 15,
     size: "33 x 37 cm",
     printing: "Hand Screen Printed",
-    material: "100% Cotton",
+    feature: "100% Cotton",
     description: "Totebag with a printed design on one side. It features two sturdy fabric handles securely stitched to the body. Made from tocuyo fabric, it showcases a delicate tie-dye effect in soft pastel shades of pink and blue. The printed design depicts an illustration of a girl performing an energy cleansing ritual in a bathtub, as water lilies rise to the surface. Around her, the gentle rhythm of waves dissolving into the sand lulls her into a soothing trance.",
+    img: "assets/img_shop/totebag_ritual.jpg",
     },
     {
     id: "ms04",
@@ -137,8 +135,9 @@ const misc = [
     price: 15,
     size: "11 oz / 30 ml",
     printing: "Sublimation Printing on Ceramic",
-    material: "Ceramic mug",
+    feature: "Ceramic mug",
     description: "Ceramic mug featuring a design of a cosmic kitten peacefully sleeping while drifting among galaxies. The original illustration was created using ink and watercolors, capturing a dreamy atmosphere.",
+    img: "assets/img_shop/taza_gatocosmico_01.jpg",
     },
     {
     id: "ms05",
@@ -146,50 +145,51 @@ const misc = [
     price: 15,
     size: "11 oz / 30 ml",
     printing: "Sublimation Printing on Ceramic",
-    material: "Ceramic mug",
+    feature: "Ceramic mug",
     description: "Ceramic mug featuring a design of a mermaid resting on a rock as she gazes at the sunset. The original illustration, created with ink and watercolors, captures a contemplative moment by the sea.",
-    }
-]
-
+    img: "assets/img_shop/taza_sirena_01.jpg",
+    },
 //Prints//
-
-    const prints = [
     //Fine Art Prints//
     {
     id: "fp01",
     name: "*Demon Lover* Fine Art Print",
     price: 12,
     size: "A5 format",
-    material: "120 gr. Acid-free cotton paper",
+    feature: "120 gr. Acid-free cotton paper",
     printing: "High Quality Digital Printing",
-    description: "The original illustration was made with watercolors."
+    description: "The original illustration was made with watercolors.",
+    img: "assets/img_gallery/a_06.jpg",
     },
     {
     id: "fp02",
     name: "*Eros in Pisces* Fine Art Print",
     price: 12,
     size: "A5 format",
-    material: "120 gr. Acid-free cotton paper",
+    feature: "120 gr. Acid-free cotton paper",
     printing: "High Quality Digital Printing",
-    description: "The original illustration was made with watercolors."
+    description: "The original illustration was made with watercolors.",
+    img: "assets/img_gallery/a_01.jpg",
     },
     {
     id: "fp03",
     name: "*Spring Rain* Fine Art Print",
     price: 12,
     size: "A5 format",
-    material: "120 gr. Acid-free cotton paper",
+    feature: "120 gr. Acid-free cotton paper",
     printing: "High Quality Digital Printing",
-    description: "The original illustration was made with watercolors."
+    description: "The original illustration was made with watercolors.",
+    img: "assets/img_gallery/a_04.jpg",
     },
     {
     id: "fp04",
     name: "*Munay Lagoon* Fine Art Print",
     price: 12,
     size: "A5 format",
-    material: "120 gr. Acid-free cotton paper",
+    feature: "120 gr. Acid-free cotton paper",
     printing: "High Quality Digital Printing",
-    description: "The original illustration was made with watercolors."
+    description: "The original illustration was made with watercolors.",
+    img: "assets/img_gallery/a_05.jpg",
     },
     //Holographic Prints//
     {
@@ -197,9 +197,10 @@ const misc = [
     name: "*Pearl Goddess* Print",
     price: 15,
     size: "A4 format",
-    material: "Holographic Vinil",
+    feature: "Holographic Vinil",
     printing: "High Quality Digital Printing",
-    description: "The original illustration was made with ink and was digitally colored."
+    description: "The original illustration was made with ink and was digitally colored.",
+    img: "assets/img_shop/pearlgoddess_01.jpg",
     },
         //Screen Printed//
     {
@@ -207,20 +208,12 @@ const misc = [
     name: "*Love & Shadow* Poster",
     price: 15,
     size: "A3 format",
-    material: "120 gr. Neon pink paper",
+    feature: "120 gr. Neon pink paper",
     printing: "Hand Screen Printed in black ink",
-    description: "The original illustration was made with black ink. The scene belongs to the 4th chapter of the comic *Moonchild*"
+    description: "The original illustration was made with black ink. The scene belongs to the 4th chapter of the comic *Moonchild*",
+    img: "assets/img_shop/poster_loveshadow_01.jpg",
     },
-    {
-    id: "sp02",
-    name: "*El Baile de la Venganza* Poster",
-    price: 15,
-    size: "A3 format",
-    material: "90 gr. black paper",
-    printing: "Hand Screen Printed in lilac ink",
-    description: "The original illustration was made with black ink. The illustration belongs to the fanzine *El Baile de la Venganza*"
-    }
-    ]
+    ];
 
 
 localStorage.setItem("storeFanzines",JSON.stringify(fanzines));
@@ -232,38 +225,79 @@ apparelProducts = JSON.parse(localStorage.getItem("storeApparel"));
 miscProducts = JSON.parse(localStorage.getItem("storeMisc"));
 printsProducts = JSON.parse(localStorage.getItem("storePrints"));
 
-const shopContent = document.getElementById("shopContent")
+const shopContent = document.getElementById("shopContent");
+const searchInput = document.getElementById("searchInput");
 
 const displayFanzines = () => {
-    fanzines.forEach((product)=> {
-        const content = document.createElement("div")
+    fanzines.forEach((product) => {
+        const content = document.createElement("div");
         content.className = "cardProduct";
         content.innerHTML = `
+        <img src="${product.img}">
         <h3>${product.name} (${product.year})</h3>
-        <p class="size">€${product.size}</p>
-        <p class="price">€${product.price}</p>
+        <p class="format">${product.format}</p>
+        <h3 class="price">€${product.price}</h3>
         <button>Add to Cart</button>
         `;
-        shopContent.append();
+        shopContent.append(content);
     });
+};
+
+const displayApparel = () => {
+    apparel.forEach((product) => {
+        const content = document.createElement("div");
+        content.className = "cardProduct";
+        content.innerHTML = `
+        <img src="${product.img}">
+        <h3>${product.name}</h3>
+        <p class="size">${product.size}</p>
+        <h3 class="price">€${product.price}</h3>
+        <button>Add to Cart</button>
+        `;
+        shopContent.append(content);
+    });
+};
+
+const displayMisc = () => {
+    misc.forEach((product) => {
+        const content = document.createElement("div");
+        content.className = "cardProduct";
+        content.innerHTML = `
+        <img src="${product.img}">
+        <h3>${product.name}</h3>
+        <p class="size">${product.size}</p>
+        <h3 class="price">€${product.price}</h3>
+        <button>Add to Cart</button>
+        `;
+        shopContent.append(content);
+    });
+};
+
+const displayPrints = () => {
+    prints.forEach((product) => {
+        const content = document.createElement("div");
+        content.className = "cardProduct";
+        content.innerHTML = `
+        <img src="${product.img}">
+        <h3>${product.name}</h3>
+        <p class="size">${product.size}</p>
+        <h3 class="price">€${product.price}</h3>
+        <button>Add to Cart</button>
+        `;
+        shopContent.append(content);
+    });
+};
+
+const searchProduct = () => {
+    const searchTerm = searchInput.value.toLowerCase()
+    const filterProduct = products. filter((product) => product.name.toLowerCase())
 };
 
 displayFanzines();
-
-const displayApparel = () => {
-    apparel.forEach((product)=> {
-        const content = document.createElement("div")
-        content.className = "cardProduct";
-        content.innerHTML = `
-        <h3>${product.name}</h3>
-        <p class="price">€${product.price}</p>
-        <button>Add to Cart</button>
-        `;
-        shopContent.append();
-    });
-};
-
 displayApparel();
+displayMisc();
+displayPrints();
+
 
 // Funciones //
 

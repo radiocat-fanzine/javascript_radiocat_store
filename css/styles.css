@@ -57,3 +57,59 @@ p{
     padding-left: 3.125rem;
     padding-right: 3.125rem;
 }
+
+.searchContainer{
+    max-width: 25rem;
+    margin: 0vh auto;
+    padding: 1.25rem;
+}
+
+input[type="text"]{
+    width: 100%;
+    padding: .625rem;
+    font-size: 1rem;
+    border: .0625rem solid #53515a;
+    border-radius: .5rem;
+    outline: none;
+}
+
+.cardItemContainer {
+    margin: 10hv auto;
+    text-align: center;
+}
+
+.cardProduct {
+    display: inline-block;
+    text-align: center;
+    margin: 0 1.875rem;
+}
+
+.cardProduct img {
+    height: 11.25rem;
+    margin-top: 1rem;
+}
+
+.cardProduct h3,
+.cardProduct .price {
+    margin-top: .625rem;
+}
+
+.cardProduct button {
+    border: none;
+    outline: 0;
+    padding: .625rem;
+    color:#403177;
+    background-color:#A2FAA3;
+    text-align: center;
+    cursor: pointer;
+    width: 12.5rem;
+    font-size: .9375rem;
+    margin-top: .625rem;
+}
+
+.no-results {
+    font-size: 1.25rem;
+    color: red;
+    text-align: center;
+    display: none;
+}
