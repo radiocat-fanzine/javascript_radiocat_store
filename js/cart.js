@@ -22,9 +22,9 @@ function displayCart(shopList) {
             <h2>Your Purchase :</h2>
         </div>
         <div class="center-info-header">
-            <h2>Price :</h2>
-            <h2>Unit :</h2>
-            <h2>Total :</h2>
+            <h2>Price</h2>
+            <h2>Unit</h2>
+            <h2>Total</h2>
         </div>
         `;
     cartContent.appendChild(header);
@@ -97,13 +97,22 @@ function displayCart(shopList) {
     if (discount > 0) {
         let discountCard = document.createElement("div");
         discountCard.className = "discount-info";
-        discountCard.innerHTML = `<p> 20% discount on Prints: -€${discount.toFixed(2)}</p>`; //Metodo .toFixed para que el descuento total quede expresado con dos decimales
+        discountCard.innerHTML = `<p> ☆*: .｡. 20% discount on Prints .｡.:*☆ = -€${discount.toFixed(2)}</p>`; //Metodo .toFixed para que el descuento total quede expresado con dos decimales
         footer.appendChild(discountCard);
     }
     let totalCard = document.createElement("div");
     totalCard.className = "total-info";
-    totalCard.innerHTML = `<h2>Your total is : €${(total - discount).toFixed(2)}</h2>`;  //Metodo .toFixed para que el total final quede expresado con dos decimales
+    totalCard.innerHTML = `<h2>Your total is = €${(total - discount).toFixed(2)}</h2>`;  //Metodo .toFixed para que el total final quede expresado con dos decimales
 
+    let payButton = document.createElement("button");
+    payButton.className = "btn-pay";
+    payButton.textContent = "Pay Now";
+
+    payButton.addEventListener("click", () => {
+    displayPayOptions(cartContent);     
+    });
+
+    totalCard.appendChild(payButton);
     footer.appendChild(totalCard);
     cartContent.appendChild(footer);
 };
@@ -121,5 +130,54 @@ function applyDiscount(cart) {
     });
     return totalDiscount;
 };
+
+//Funcion 4 para mostrar las opciones de pago
+
+function displayPayOptions(){
+
+    if (document.querySelector(".pay-options")) {
+        return;
+    }
+
+    const options = [               //Array de Metodos de pago
+        {id: "card", name: "💳 Card"},
+        {id: "card", name: "🔷 PayPal"},
+        {id: "card", name: "🤍 ApplePay"},
+    ];
+    
+    const payContainer = document.createElement("div");
+    payContainer.className = "pay-options";
+    payContainer.innerHTML = `
+        <div class="pay-header">
+            <h2>Select Payment Method</h2>
+            <button class="close-pay">✖</button>
+        </div>
+        `;
+
+    for (let i = 0; i < options.length; i++) {   //Ciclo (For) para crear los botones de cada metodo de pago
+        const op = options[i];
+        const button = document.createElement("button")
+        button.className = "pay-card";
+        button.innerText = op.name;
+
+        button.addEventListener("click", function () {
+            Toastify({
+                text: "You picked :" + op.name,
+                duration: 3000,
+                gravity: "top",
+                position: "right",
+                style: {
+                    background: "#f9c4c1ff",
+                    color: "#403177"
+                }
+            }) .showToast();
+        });
+        payContainer.appendChild(button);
+    }
+    payContainer.querySelector(".close-pay").addEventListener("click", () =>{
+        payContainer.remove();
+    });
+    document.querySelector("#payContainer").appendChild(payContainer);
+}
 
 displayCart(cart);

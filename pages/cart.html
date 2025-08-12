@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script defer src="../js/cart.js"></script>
     <title>Cart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="../css/styles.css">
 </head>
@@ -16,17 +18,24 @@
         <h1>Radiocat Store</h1>
         </div>
         <ul>
-            <li><a href="../index.html">☆*: .｡. Volver a Artshop .｡.:*☆</a></li>
+            <li><a href="../index.html" class="hoverTitle">☆*: .｡. Back to Artshop .｡.:*☆</a></li>
             <li class="shop-cart" id="shopCart"><a href="#" class="selectedItem">🛒</a></li>
         </ul>
     </nav>
 </header>
 <main>
-    <div class="cart-container" id="cartContainer">
+    <!-- Shopping Cart -->
+    <section>
         <div id="cartContent" class="cart-content">
-            
         </div>
-    </div>
+    </section>
+    <!-- Paying methods -->
+    <section>
+        <div id="payContainer" class="pay-container">
+        </div>
+    </section>
+    
+    
 </main>
 </body>
 </html>
