@@ -1,4 +1,6 @@
 const cartContent = document.getElementById("cartContent");
+const payContainer = document.getElementById("payContainer")
+const formContainer = document.getElementById("formContainer");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -145,14 +147,15 @@ function displayPayOptions(){
         {id: "card", name: "🤍 ApplePay"},
     ];
     
-    const payContainer = document.createElement("div");
-    payContainer.className = "pay-options";
-    payContainer.innerHTML = `
+    const container = document.createElement("div");
+    container.className = "pay-options";
+    container.innerHTML = `
         <div class="pay-header">
             <h2>Select Payment Method</h2>
             <button class="close-pay">✖</button>
         </div>
         `;
+    payContainer.appendChild(container)
 
     for (let i = 0; i < options.length; i++) {   //Ciclo (For) para crear los botones de cada metodo de pago
         const op = options[i];
@@ -160,7 +163,7 @@ function displayPayOptions(){
         button.className = "pay-card";
         button.innerText = op.name;
 
-        button.addEventListener("click", function () {
+        button.addEventListener("click", function () {   //Evento: envio de notificaciones con Toastify
             Toastify({
                 text: "You picked :" + op.name,
                 duration: 3000,
@@ -171,13 +174,83 @@ function displayPayOptions(){
                     color: "#403177"
                 }
             }) .showToast();
+
+            showPayForm(op);
         });
-        payContainer.appendChild(button);
+        container.appendChild(button);
     }
-    payContainer.querySelector(".close-pay").addEventListener("click", () =>{
-        payContainer.remove();
+    container.querySelector(".close-pay").addEventListener("click", () =>{
+        container.remove();
     });
-    document.querySelector("#payContainer").appendChild(payContainer);
+    payContainer.appendChild(container);
+}
+
+//Funcion 5 para desplegar ventana flotante del formulario de pago con datos simulados de usuario
+
+function showPayForm(payOption) {
+    if(document.querySelector(".pay-form"))
+        return;
+
+    const form = document.createElement("div");
+    form.className = "pay-form";
+
+    const simulatedData = {
+        fullName: "Marian Lopez",
+        id: "123456789",
+        email: "marian.lopez@example.com",
+        address: "Av. Los Rosales 420",
+    };
+
+    form.innerHTML = `
+        <div class = "form-content">
+            <div class = "form-header">
+                <h2>${payOption.name} Payment</h2>
+                <button class = "form-close">✖</button>
+            </div>
+            <p><strong>Almost done!</strong><br>Please complete your details to finalize the payment.</p>
+            <form id = "paymentForm">
+                <label>Full Name:
+                    <input type = "text" name = "fullName" value = "${simulatedData.fullName}" required>
+                </label>
+                <label>ID:
+                    <input type = "text" name = "id" value = "${simulatedData.id}" required>
+                </label>
+                <label>E-mail:
+                    <input type = "text" name = "email" value = "${simulatedData.email}" required>
+                </label>
+                <label>Shipping Address:
+                    <input type = "text" name = "address" value = "${simulatedData.address}" required>
+                </label>
+                <button type = "button" class = "pay-submit">Complete Purchase</button>
+            </form>
+            <p class = "payment-message"></p>
+        </div>
+    `;
+    
+    formContainer.appendChild(form);
+
+    form.querySelector(".form-close").addEventListener("click", () => {
+        form.remove();
+    });
+
+    form.querySelector(".pay-submit").addEventListener("click", () => {
+        const messageElement = form.querySelector(".payment-message");
+        messageElement.style.color = "#403177";
+        messageElement.textContent = "Payment successful! We’re processing your order now."
+
+        cart = [];     //Vaciar carrito de compras despues del pago
+        localStorage.removeItem("cart");
+        displayCart(cart);
+
+        setTimeout(() => {window.location.href = "../pages/confirm.html";}, 2500);
+    });
+    
 }
 
 displayCart(cart);
+
+//Funcion para boton que te redirige a index.html desde confirm.html
+
+function goToArtshop() {
+    window.location.href = '/index.html';
+}
