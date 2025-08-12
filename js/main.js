@@ -83,6 +83,7 @@ function displayProducts(productList) {
                     name: product.name,
                     price: product.price,
                     units: product.units,
+                    type: product.type,
                 });
             }
 
