@@ -183,9 +183,28 @@ function displayPayOptions(){
         container.remove();
     });
     payContainer.appendChild(container);
+};
+
+//Funcion 5 para simular el proceso de pago y verificar que los datos son correctos + Promesa
+
+function processPayment(form) {
+    return new Promise((resolve, reject) => {
+        const fullName = form.querySelector('input[name = "fullName"]').value;
+        const id = form.querySelector('input[name = "id"]').value;
+        const email = form.querySelector('input[name = "email"]').value;
+        const address = form.querySelector('input[name = "address"]').value;
+
+        if(!fullName || !id || !address){
+            reject(new Error("Please complete all fields."));
+        } else {
+            setTimeout(() => {
+                resolve("Payment successful! We’re processing your order now.");
+            }, 2000);
+        }
+    });
 }
 
-//Funcion 5 para desplegar ventana flotante del formulario de pago con datos simulados de usuario
+//Funcion 6 para desplegar ventana flotante del formulario de pago con datos simulados de usuario
 
 function showPayForm(payOption) {
     if(document.querySelector(".pay-form"))
@@ -235,14 +254,27 @@ function showPayForm(payOption) {
 
     form.querySelector(".pay-submit").addEventListener("click", () => {
         const messageElement = form.querySelector(".payment-message");
-        messageElement.style.color = "#403177";
-        messageElement.textContent = "Payment successful! We’re processing your order now."
+        
+        processPayment (form)
+            .then((successMessage) => {
+                messageElement.textContent = successMessage;
 
-        cart = [];     //Vaciar carrito de compras despues del pago
-        localStorage.removeItem("cart");
-        displayCart(cart);
+                cart = [];     
+                localStorage.removeItem("cart");
+                displayCart(cart);
 
-        setTimeout(() => {window.location.href = "../pages/confirm.html";}, 2500);
+                setTimeout(() => {window.location.href = "../pages/confirm.html";
+                }, 2000);
+            })
+
+            .catch((error) => {
+                messageElement.style.color = "#fe0d00ff";
+                messageElement.textContent = "Error: " + error.message;
+            })
+
+            .finally(() =>{
+                console/log("Payment attempt finished");
+            });
     });
     
 }
