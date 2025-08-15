@@ -284,5 +284,5 @@ displayCart(cart);
 //Funcion para boton que te redirige a index.html desde confirm.html
 
 function goToArtshop() {
-    window.location.href = '/index.html';
+    window.location.href = '../index.html';
 }
