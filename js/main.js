@@ -10,7 +10,7 @@ let products = []; // Array para colocar los objetos de JSON
 
 //Funcion asincrona de orden superior 1 para obtener los productos
 async function getProducts () {       
-    const response = await fetch("./db/data.json"); // Fetch / JSON
+    const response = await fetch("https://radiocat-fanzine.github.io/javascript_radiocat_store/db/data.json"); // Fetch / JSON
     const data = await response.json();
     products = data;
     displayProducts(data)
